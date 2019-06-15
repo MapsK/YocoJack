@@ -30,6 +30,7 @@
         var deck = new Array();
 
         deck = new Array();
+        
         for (var y = 0; y < values.length; y++)
         {
             for (var x = 0; x < suits.length; x++)
