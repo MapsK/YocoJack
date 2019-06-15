@@ -1,4 +1,3 @@
-# YocoJack
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -24,8 +23,6 @@
     </div>
 </body>
 <script lang="javascript">
-   
-
     function handCards()
     {
         var suits = ["Spades", "Diamonds", "Clubs", "Hearts"];
@@ -63,6 +60,29 @@
             var player = { Name: 'Player ' + x, ID: x, Points: 0, Hand: hand };
         player.push(player);
         }
+    }
+    
+    function yocoJack()
+    {
+        document.getElementById('btnBegin').value = 'Restart';
+        document.getElementById('status').style.display = "none";
+
+        currenPlayer = 0;
+        handCards();
+        createPlayers(2);
+
+        document.getElementById('player_' + currenPlayer).classList.add('active');
+    }
+
+    function clickMe()
+    {
+        var currentPlayer = 0;
+
+        var card = deck.pop();
+        players[currentPlayer].Hand.push(card);
+        renderCard(card, currentPlayer)
+        updatePoints();
+        check();
     }
 </script>
 </html>
